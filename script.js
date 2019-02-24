@@ -22,7 +22,9 @@ var churchillSpeech = {
 
 if (typeof userName !== "string") {
     userName = window.prompt("Quit playing games! We just want to say hello. What is your name?");
-} else if (userName === "") {
+}
+
+if (userName === "") {
     console.log("Okay, I'll just call you User");
     userName = "User";
 } else {
