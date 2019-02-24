@@ -24,6 +24,10 @@ if (typeof userName !== "string") {
     userName = window.prompt("Quit playing games! We just want to say hello. What is your name?");
 }
 
+if (typeof userName === 'object') {
+    userName = "";
+}
+
 if (userName === "") {
     console.log("Okay, I'll just call you User");
     userName = "User";
@@ -34,9 +38,11 @@ if (userName === "") {
 
 //Button Clicks
 document.getElementById('BtnDonate').addEventListener('click', function(){
-    var favoriteAnswer = window.prompt("Which of these authors is your favorite: Churchill, Ghandi, or Demosthenes?"),
+    var favoriteAnswer = window.prompt("Hey " + userName + "! Which of these authors is your favorite: Churchill, Ghandi, or Demosthenes?");
 
+    if (favoriteAnswer != null) {
         favorite = favoriteAnswer.toLowerCase();
+    } else {favorite = ""}
 
     switch (favorite) {
         case "churchill" :
@@ -52,6 +58,7 @@ document.getElementById('BtnDonate').addEventListener('click', function(){
             console.log("You've misspelled your favorite author. Click donate again to give it another try.");
     }
 });
+
 
 document.getElementById('BtnChurchill').addEventListener('click', function(){
 
@@ -73,6 +80,7 @@ document.getElementById('BtnChurchill').addEventListener('click', function(){
         console.log("This is the most recent speech on the page.");
     }
 });
+
 
 document.getElementById('BtnGhandi').addEventListener('click', function(){
 
@@ -96,6 +104,7 @@ document.getElementById('BtnGhandi').addEventListener('click', function(){
 });
 
 document.getElementById('BtnDemosthenes').addEventListener('click', function(){
+
     console.log("This speech was written by " + demosthenesSpeech.author + " in " + demosthenesSpeech.year + ".");
     
     if (demosthenesSpeech.yearIsBCE) {
