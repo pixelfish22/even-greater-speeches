@@ -29,18 +29,47 @@ if (typeof userName !== "string") {
     console.log("Hi " + userName + "!");
 }
 
-    document.getElementById('BtnDonate').addEventListener('click', function(){
-  //Code in here executes when the user clicks the "Donate" button.
+
+//Button Clicks
+document.getElementById('BtnDonate').addEventListener('click', function(){
+    var favoriteAnswer = window.prompt("Which of these authors is your favorite: Churchill, Ghandi, or Demosthenes?"),
+        favorite = favoriteAnswer.toLowerCase();
+    switch (favorite) {
+        case "churchill" :
+            console.log(speechesArray[0].author + " was " + speechesArray[0].authorAge + " during this speech.");
+            break;
+        case "ghandi" :
+            console.log(speechesArray[1].author + " was " + speechesArray[1].authorAge + " during this speech.");
+            break;
+        case "demosthenes" :
+            console.log(speechesArray[2].author + " was " + speechesArray[2].authorAge + " during this speech.");
+            break;
+        default :
+            window.prompt("You've misspelled your favorite author. Click donate again to give it another try.");
+    }
 });
 
 document.getElementById('BtnChurchill').addEventListener('click', function(){
-  //Code in here executes when the user clicks the "Churchill" button.
+    console.log("This speech was written by " + speechesArray[0].author + " in " + speechesArray[0].year + ".");
+    if (speechesArray[0].yearIsBCE === true) {
+        console.log("This speech took place before the common era.");
+    } else {
+        console.log("This speech took place during the common era.");
+    };
 });
 
 document.getElementById('BtnGhandi').addEventListener('click', function(){
-  //Code in here executes when the user clicks the "Ghandi" button.
-});
+    console.log("This speech was written by " + speechesArray[1].author + " in " + speechesArray[1].year + ".");
+    if (speechesArray[1].yearIsBCE === true) {
+        console.log("This speech took place before the common era.");
+    } else {
+        console.log("This speech took place during the common era.");
+    };});
 
 document.getElementById('BtnDemosthenes').addEventListener('click', function(){
-  //Code in here executes when the user clicks the "Demosthenes" button.
-});
+    console.log("This speech was written by " + speechesArray[2].author + " in " + speechesArray[2].year + ".");
+    if (speechesArray[2].yearIsBCE === true) {
+        console.log("This speech took place before the common era.");
+    } else {
+        console.log("This speech took place during the common era.");
+    };});
