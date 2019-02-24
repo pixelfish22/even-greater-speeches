@@ -47,7 +47,7 @@ document.getElementById('BtnDonate').addEventListener('click', function(){
             console.log(speechesArray[2].author + " was " + speechesArray[2].authorAge + " during this speech.");
             break;
         default :
-            window.prompt("You've misspelled your favorite author. Click donate again to give it another try.");
+            console.log("You've misspelled your favorite author. Click donate again to give it another try.");
     }
 });
 
